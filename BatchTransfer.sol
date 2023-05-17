@@ -1,11 +1,9 @@
 pragma solidity ^0.8.0;
 
 contract BatchTransfer {
-    address payable public owner;  
-    mapping(address => bool) public whitelist;
-    
+    address public owner;  
     constructor() {
-        owner = payable(msg.sender);
+        owner = msg.sender;
     }
     
     modifier onlyOwner() {
